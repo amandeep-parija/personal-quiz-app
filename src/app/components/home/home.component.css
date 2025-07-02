@@ -1,0 +1,39 @@
+.home-container{
+    text-align: center;
+    padding: 5 rem 2 rem;
+    color: #fff;
+    background: linear-gradient(to right, #232526, #414345);
+    min-height: 100vh;
+}
+
+.brand{
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    color: #70fa92;
+
+}
+
+.tagline{
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+
+}
+
+.start-btn{
+    padding:  1rem 2rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 25px;
+    background-color: #70fa92;
+    color: #000;
+    cursor: pointer;
+    transition: 0.3s;
+
+}
+.start-btn:hover{
+    transform: scale(1.05);
+    background-color: #57de79;
+}
