@@ -521,7 +521,7 @@ export class QuizService {
   ];
 
 
-  private suffledQuestions: QuizQuestion[] = [];
+  private shuffledQuestions: QuizQuestion[] = [];
   private currentQuestionIndex = 0;
   private answers: string[] = [];
 
@@ -540,6 +540,43 @@ export class QuizService {
   }
   
 
+  resetQuiz(){
+    this.shuffledQuestions = this.shuffleArray(this.originalQuestions).map(q =>({...q,
+      options : this.shuffleArray(q.options)
+    }));
+    this.currentQuestionIndex = 0;
+    this.answers = [];
+  }
+
+  getcurrentQuestion(){
+    return this.shuffledQuestions[this.currentQuestionIndex];
+  }
+
+  selectAnswer(type: string){
+    this.answers.push(type);
+    this.currentQuestionIndex++;
+  }
+
+  isQuizFinished(){
+    return this.currentQuestionIndex >= this.shuffledQuestions.length;
+  }
+
+  getResult(): string {
+    const count:any = {};
+    this.answers.forEach(type => {
+      count[type] = (count[type] || 0) + 1;
+    });
+
+    let maxType = '';
+    let maxCount = 0;
+    for(let type in count){
+      if (count[type]> maxCount){
+        maxCount = count[type];
+        maxType = type;
+      }
+    }
+    return maxType;
+  }
 
 
 
