@@ -522,7 +522,7 @@ export class QuizService {
 
 
   private shuffledQuestions: QuizQuestion[] = [];
-  private currentQuestionIndex = 0;
+  public currentQuestionIndex = 0;
   private answers: string[] = [];
 
   constructor(){
@@ -541,14 +541,16 @@ export class QuizService {
   
 
   resetQuiz(){
-    this.shuffledQuestions = this.shuffleArray(this.originalQuestions).map(q =>({...q,
+    const randomized = this.shuffleArray(this.originalQuestions);
+    const selected = randomized.slice(0, 25);
+    this.shuffledQuestions = selected.map(q =>({...q,
       options : this.shuffleArray(q.options)
     }));
     this.currentQuestionIndex = 0;
     this.answers = [];
   }
 
-  getcurrentQuestion(){
+  getCurrentQuestion(){
     return this.shuffledQuestions[this.currentQuestionIndex];
   }
 
@@ -577,6 +579,12 @@ export class QuizService {
     }
     return maxType;
   }
+
+
+  public getTotalQuestions(): number {
+  return this.shuffledQuestions.length;
+}
+
 
 
 

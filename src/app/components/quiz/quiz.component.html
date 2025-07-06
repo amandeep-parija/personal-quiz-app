@@ -1,1 +1,25 @@
-<p>quiz works!</p>
+<div class="quiz-container" *ngIf="currentQuestion">
+
+  <p class="progress">
+    Question {{ quizservice.currentQuestionIndex + 1 }} of {{ quizservice.getTotalQuestions() }}
+  </p>
+
+  <h2 class="question-text">{{ currentQuestion.text }}</h2>
+
+  <div class="options">
+    <button
+      *ngFor="let opt of currentQuestion.options"
+      (click)="selectOption(opt.type)"
+      class="option-btn"
+    >
+      {{ opt.answer }}
+    </button>
+  </div>
+
+  <!-- <div class="progress-bar">
+  <div
+    class="progress-fill"
+    [style.width.%]="(questionNumber / totalQuestions) * 100"
+  ></div>
+</div> -->
+</div>
