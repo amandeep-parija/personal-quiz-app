@@ -1,0 +1,68 @@
+.result-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    padding: 20px;
+    font-family: 'Poppins' , sans-serif;
+}
+
+.result-card{
+    background: linear-gradient(to right, #fffefc, #f7f7f7);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    animation: fadeIn 0.7s ease;
+}
+
+.result-emoji{
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+
+.result-title{
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.result-title span{
+    color: #ff4081;
+}
+
+.result-description{
+    font-size: 18px;
+    color: #555;
+}
+
+.actions{
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.button{
+    padding: 12px 20px;
+    border: none;
+    border-radius: 12px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.button:hover{
+    background-color: #388e3c;
+}
+
+@keyframes fadeIn{
+    from{ opacity: 0; transform: translateY(10px);}
+    to{ opacity: 1; transform: translateY(0);}
+}
+

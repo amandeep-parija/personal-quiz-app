@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { QuizService } from '../../Services/quiz.service';
 import { Router } from '@angular/router';
+import html2canvas from 'html2canvas';
+
 
 @Component({
   selector: 'app-result',
@@ -21,6 +23,7 @@ export class ResultComponent implements OnInit {
   ngOnInit(): void {
       this.personalityType = this.quizService.getResult();
       this.setResultDetails(this.personalityType);
+      this.saveResultToHistory();
   }
 
   setResultDetails(type: string){
@@ -202,8 +205,8 @@ export class ResultComponent implements OnInit {
 
 const result = resultMap[type];
 if (result){
-  this.resultDescription = this.resultDescription;
-  this.resultEmoji = this.resultEmoji;
+  this.resultDescription = result.description;
+  this.resultEmoji = result.emoji;
 } else{
   this.resultDescription = 'You are unique and cannot be defined!';
   this.resultEmoji = '✨'
@@ -213,6 +216,47 @@ if (result){
 restartQuiz(){
   this.quizService.resetQuiz();
   this.router.navigate(['/quiz']);
+}
+
+downloadResult(){
+  const resultElement = document.getElementById('resultCard');
+  if (resultElement){
+    html2canvas(resultElement).then(canvas =>{
+      const link = document.createElement('a');
+      link.download = 'quiz-result.png';
+      link.href = canvas.toDataURL();
+      link.click();
+    })
+  }
+}
+
+shareResult(){
+  const shareText = `I got "${this.personalityType}" in this fun personality quiz! 🧠🎉`;
+  const shareUrl = window.location.origin;
+
+  if(navigator.share){
+    navigator.share({
+      title: 'My Personality Result',
+      text: shareText,
+      url: shareUrl,
+    });
+  } else{
+    alert('Sharing not supported on this device.')
+  }
+}
+
+saveResultToHistory(){
+  const prev = JSON.parse(localStorage.getItem('quizResults') || '[]');
+
+
+  const current = {
+    type: this.personalityType,
+    emoji: this.resultEmoji,
+    timestamp: new Date()
+  };
+  prev.push (current);
+
+  localStorage.setItem('quizResults', JSON.stringify(prev));
 }
 }
 
