@@ -6,7 +6,11 @@
     <li><a routerLink="/home" routerLinkActive="active"> Home </a></li>
     <li><a routerLink="/quiz" routerLinkActive="active"> Quiz </a></li>
     <li><a routerLink="/about" routerLinkActive="active"> About Us </a></li>
-    <li><i routerLinkActive="active" class="fa-regular fa-moon"></i></li>
+    <li>
+        <button (click)="toggleDarkMode()" class="dark-toggle-btn">
+          <i class="{{ isDarkMode ? 'fa-solid fa-sun' : 'fa-regular fa-moon' }}"></i>
+        </button>
+      </li>
     </ul>
 </div>
 </nav>
