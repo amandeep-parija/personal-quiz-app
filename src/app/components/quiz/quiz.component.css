@@ -1,27 +1,33 @@
 .quiz-container{
-  max-width: 700px;
+  max-width: 800px;
   margin: 40px auto;
   padding: 40px;
-  background: rgba(255, 255, 255, 0.15);
+  background: #1e1e1e;
   backdrop-filter: blur(12px);
-  border-radius: 24px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 1.5rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
   text-align: center;
+  padding: 2rem;
   color: #222;
   font-family: 'Poppins', sans-serif;
   animation: fadeIn 0.8s ease-in-out;
+  transition: background 0.3s ease, color 0.3s ease;
+  animation: fadeInUp 0.5s ease;
 }
 .question-text{
-    font-size: 28px;
-    margin-bottom: 30px;
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
     font-weight: 600;
+    color: #ffffff;
+    text-align: center;
 
 }
 .progress{
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 10px;
-    color: #555;
+    color: #aaa;
+    text-align: center;
 }
 
 .questions{
@@ -37,22 +43,26 @@
 }
 
 .option-btn{
+    color: #2c2c2c;
     padding: 14px 22px;
+    margin: 0.5rem;
     font-size: 18px;
     background: linear-gradient(to right, #fdfbfb, #ebedee);
-    border: 2px solid #ddd;
+    border: 1px solid #444;
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.2s ease;
     min-width: 160px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, transform 0.2s;
 }
 
 .option-btn:hover{
-    background-color: #fff176;
+    background-color: #3d3d3d;
     transform: translateY(-3px) scale(1.05);
     font-weight: bold;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    color: #90ee90;
 
 }
 
@@ -66,3 +76,6 @@
     to{ opacity: 1; transform: translateY(0);}
     
 }
+
+
+

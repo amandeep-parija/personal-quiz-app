@@ -7,9 +7,15 @@
     <li><a routerLink="/quiz" routerLinkActive="active"> Quiz </a></li>
     <li><a routerLink="/about" routerLinkActive="active"> About Us </a></li>
     <li>
-        <button (click)="toggleDarkMode()" class="dark-toggle-btn">
-          <i class="{{ isDarkMode ? 'fa-solid fa-sun' : 'fa-regular fa-moon' }}"></i>
-        </button>
+        <!-- <button (click)="toggleTheme()" class="theme-toggle" title="Toggle Theme">
+          <i class="fa-solid fa-sun" *ngIf="isDarkMode" (click)="toggleTheme()"></i>
+          <i class="fa-sharp fa-solid fa-moon" *ngIf="!isDarkMode" (click)="toggleTheme()"></i>
+          
+        </button> -->
+        <button class="theme-toggle-btn" (click)="toggleTheme()">
+  <i [class]="isDarkMode ? 'fa-solid fa-sun' : 'fa-solid fa-moon'"></i>
+</button>
+
       </li>
     </ul>
 </div>

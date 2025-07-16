@@ -6,51 +6,30 @@
     --accent: #ff4081;
 }
 
-/* .body{
-  background-color: #ffffff;  
-  color: #000000;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
 
-.body.dark-mode{
-    background-color: #1a1a1a;
-    color: #e0e0e0;
-}
 
-.navbar{
-    background-color: #1f1f1f;
-    color: white;
-    transition: background-color 0.3s;
-}
 
-.body.dark-mode .navbar{
+.dark-mode{
     background-color: #121212;
+    color: #f1f1f1;
 }
 
-.navbar-links a{
-    color: #ffffff;
-    text-decoration: none;
+.dark-mode .quiz-container,
+.dark-mode .result-card,
+.dark-mode .navbar{
+    background-color: #1e1e1e;
+    color: #f1f1f1;
 }
 
-.navbar-links a.active{
-    color: #73fa79;
-    text-decoration: underline;
+.dark-mode .option-btn{
+    background-color: #333;
+    color: #555;
+}
+.dark-mode .option-btn:hover{
+    background-color: #555;
 }
 
-.body.dark-mode .navbar-links{
-    color: #ffffff;
+.body .dark-mode{
+    background-color: #121212;
+    color: #f0f0f0;
 }
-
-.home-title{
-    color: #73fa79;
-}
-
-.body.dark-mode .home-title{
-    color: #73fa79;
-}
-
-.home-subtitle{
-    color: #d3d3d3;
-} */
-
-
