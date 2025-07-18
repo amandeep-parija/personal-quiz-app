@@ -1,75 +1,63 @@
-.about-wrapper{
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    color: #fff;
-    background-color: #111;
-    border-radius: 16rem;
-    box-shadow: 0 0 40px rgba(116,250,141,0.15);
+.about-wrapper {
+  text-align: center;
+  color: white;
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
 }
 
-.about-wrapper h1{
-    font-size: 2.5rem;
-    text-align: center;
-    color: #74fa8d;
-    margin-bottom: 1rem;
+.about-wrapper h1 {
+  color: #67ff8a;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
-.brand{
-    color: #74fa8d;
+.about-wrapper p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto 2rem;
 }
 
-.team-section h2{
-    margin-top: 2rem;
-    font-size: 1.75rem;
-    color: #ffffff;
+.team-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: white;
 }
 
-
-
-.creator-card{
-    display: flex;
-    gap: 24px;
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-    align-items: center;
-    flex-wrap: wrap;
+.creator-card.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
 .creator-card img {
-  width: 140px;
-  height: 140px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  border: 3px solid #74fa8d;
+  border: 2px solid #67ff8a;
   object-fit: cover;
+  box-shadow: 0 0 10px #67ff8a;
 }
 
 .creator-info h3 {
   font-size: 1.4rem;
-  color: #ffffff;
   font-weight: bold;
+  margin: 0.5rem 0;
 }
 
 .creator-info p {
-  margin: 0.3rem 0;
   font-size: 1rem;
-  color: #ddd;
 }
 
-.dev-icon {
-  font-weight: bold;
-  color: #74fa8d;
-  font-family: 'Courier New', Courier, monospace;
-  animation: pulse 1.5s infinite ease-in-out;
-}
-
-.tech-stack {
-  color: #74fa8d;
+.emoji {
+  color: #67ff8a;
+  font-family: monospace;
   font-weight: bold;
 }
 
-@keyframes pulse {
-  0% { transform: scale(1); opacity: 0.7; }
-  50% { transform: scale(1.2); opacity: 1; }
-  100% { transform: scale(1); opacity: 0.7; }
+.tech {
+  color: #67ff8a;
+  font-weight: bold;
 }
