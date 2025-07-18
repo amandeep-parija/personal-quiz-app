@@ -2,13 +2,15 @@
   "name": "personality-quiz-app",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "serve:ssr:personality-quiz-app": "node dist/personality-quiz-app/server/server.mjs"
-  },
+  "ng": "ng",
+  "start": "ng serve",
+  "build": "ng build",
+  "watch": "ng build --watch --configuration development",
+  "test": "ng test",
+  "build:ssr": "ng build --configuration production && ng run personality-quiz-app:server:production",
+  "serve:ssr": "node dist/personality-quiz-app/server/main.js"
+
+},
   "private": true,
   "dependencies": {
     "@angular/animations": "^19.1.0",

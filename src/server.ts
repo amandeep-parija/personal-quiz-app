@@ -30,10 +30,10 @@ const angularApp = new AngularNodeAppEngine();
  * Serve static files from /browser
  */
 app.use(
-  express.static(browserDistFolder, {
+  '/assets',
+  express.static(resolve(browserDistFolder, 'assets'), {
     maxAge: '1y',
-    index: false,
-    redirect: false,
+    
   }),
 );
 
